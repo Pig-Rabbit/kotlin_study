@@ -12,3 +12,32 @@ Development Android Application
 - package: 연관성 있는 클래스들을 분류하기 위한 디렉터리 구조
 - private, internal, protected, public: 접근 제한자, 클래스의 멤버에 지정되어 외부에서 사용 여부 결정
 - generic: 타입을 특정해서 안정성을 유지하기 위한 설계 도구
+
+Null Safety
+- Nullable (3 types)
+1. var nullable: String?
+2. fun nullParameter(str:String?) { ~
+3. fun nullReturn(): String? { ~
+- Safe Call (?.)
+1. var resultNull: Int? = str?.length
+- Elvis Operator (?:)
+1. var resultNonNull: Int = str?.length?:0
+
+lateinit & lazy
+- Examples
+1. lateinit var name: String
+2. val person by lazy {Person()}
+
+Scope Function
+- run: 스코프 함수 안에서 호출한 대상을 this로 사용 가능 (this 생략 가능)
+1. list.run { ~
+2. list.apply { ~
+3. with (list) { ~
+- let: 스코프 함수 안에서 호출한 대상을 it으로 사용 가능 (it 생략 불가, 이름 대체 가능)
+1. list.let { ~
+2. list.also { ~
+
+Layout
+- Constraint Layout: Android Default Layout
+- Linear Layout: Horizontal and Vertical Layout
+- Frame Layout: Overlap Multiple Layout
